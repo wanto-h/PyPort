@@ -48,21 +48,36 @@ def portscan():
         if result==0:
             print("Port open", port)
             open_ports.append(port)
+        #Enable this to see how fast the scan is going
+        #elif result!=0:
+         #   print("Closed port", port)
 
 #Defines and run threads on the portscan function
 t1=threading.Thread(target=portscan)
 t2=threading.Thread(target=portscan)
 t3=threading.Thread(target=portscan)
 t4=threading.Thread(target=portscan)
+t5=threading.Thread(target=portscan)
+t6=threading.Thread(target=portscan)
+t7=threading.Thread(target=portscan)
+t8=threading.Thread(target=portscan)
+t9=threading.Thread(target=portscan)
+t10=threading.Thread(target=portscan)
 
 def threadstart():
     t1.start()
     t2.start()
     t3.start()
     t4.start()
+    t5.start()
+    t6.start()
+    t7.start()
+    t8.start()
+    t9.start()
+    t10.start()
 
 
-#Defines which ports to add in the queue based on the mode
+#Defines which ports to :add in the queue based on the mode
 if scanmode==1:
    scan(allportstart,allportend)
    threadstart()
