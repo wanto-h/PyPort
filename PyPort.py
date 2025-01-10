@@ -1,6 +1,18 @@
 import socket
 from queue import Queue
 import threading
+from time import time, ctime
+print('''
+
+ ____        ____            _   
+|  _ \ _   _|  _ \ ___  _ __| |_ 
+| |_) | | | | |_) / _ \| '__| __|
+|  __/| |_| |  __/ (_) | |  | |_ 
+|_|    \__, |_|   \___/|_|   \__|
+       |___/                     
+
+ ''')
+print(f"Created by wanto- \n{ctime(time())}")
 
 queue=Queue()
 open_ports=[]
