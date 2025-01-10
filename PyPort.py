@@ -44,20 +44,31 @@ def portscan():
         port=queue.get()
         s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         result=s.connect_ex((target,port))
+        s.close()
         if result==0:
             print("Port open", port)
             open_ports.append(port)
+    print (f"Open ports goes as follows \n {open_ports}")
+    
+#Defines and run threads on the portscan function
+t1=threading.Thread(target=portscan)
+t2=threading.Thread(target=portscan)
+t3=threading.Thread(target=portscan)
+t4=threading.Thread(target=portscan)
+
+def threadstart():
+    t1.start()
+    t2.start()
+    t3.start()
+    t4.start()
+
 
 #Defines which ports to add in the queue based on the mode
 if scanmode==1:
    scan(allportstart,allportend)
-   portscan()
+   threadstart()
 elif scanmode==2:
     scan(mainportstart,mainportend)
-    portscan()
+    threadstart()
 else:
     print("This mode does not exist")
-
-
-
-print (f"Open ports goes as follows \n {open_ports}")
