@@ -48,8 +48,7 @@ def portscan():
         if result==0:
             print("Port open", port)
             open_ports.append(port)
-    print (f"Open ports goes as follows \n {open_ports}")
-    
+
 #Defines and run threads on the portscan function
 t1=threading.Thread(target=portscan)
 t2=threading.Thread(target=portscan)
@@ -72,3 +71,6 @@ elif scanmode==2:
     threadstart()
 else:
     print("This mode does not exist")
+
+if queue.empty():
+    print (f"Open ports goes as follows \n {open_ports}")
