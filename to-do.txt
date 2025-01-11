@@ -1,0 +1,1 @@
+Add a speed mode allowing the user to set how fast he wants the program to scan
